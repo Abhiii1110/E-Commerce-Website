@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="product-detail-page">
+  <h1 class="product-detail-title">Product Details</h1>
+
+  <div class="product-detail-container">
+    <div class="product-detail">
+      <img src="{{ prodView.image.url }}" alt="{{ prodView.name }}">
+      <p><strong>Product Name:</strong> {{ prodView.product_name }}</p>
+      <p><strong>Category:</strong> {{ prodView.category }}</p>
+      <p><strong>Subcategory:</strong> {{ prodView.subcategory }}</p>
+      <p><strong>Date:</strong> {{ prodView.pub_date }}</p>
+      <p><b>Price:</b> ₹{{ prodView.price }}</p>
+      <p><strong>Description:</strong> {{ prodView.desc }}</p>
+
+      <a href="{% url 'index' %}" class="btn btn-primary">Back to Shop</a>
+      <a href="{% url 'addtocart' prodView.id %}" class="btn btn-primary">Add To Cart</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

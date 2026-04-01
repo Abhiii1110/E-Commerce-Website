@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'your_app/css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+  <div class="login-container">
+    <h2>Login</h2>
+    <form method="post">
+      {% csrf_token %}
+      <label>Username:</label>
+      <input type="text" name="username" required>
+
+      <label>Password:</label>
+      <input type="password" name="password" required>
+
+      <button type="submit" class="btn btn-success">Login</button>
+    </form>
+  </div>
+{% endblock %}

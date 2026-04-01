@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container my-5">
+  <h1 class="mb-4 text-center">Terms and Conditions</h1>
+
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <p>
+        Welcome to <strong>E-Shop</strong>. By accessing or using our website, you agree to comply with and be bound by the following terms and conditions.
+        Please read them carefully.
+      </p>
+
+      <h5>1. Use of the Website</h5>
+      <p>
+        You agree to use this website only for lawful purposes and in a way that does not infringe the rights of others,
+        or restrict or inhibit anyone else's use and enjoyment of the website.
+      </p>
+
+      <h5>2. Product Information</h5>
+      <p>
+        We strive to provide accurate product descriptions and pricing; however, errors may occur.
+        We reserve the right to correct any mistakes and to refuse or cancel orders.
+      </p>
+
+      <h5>3. Orders and Payment</h5>
+      <p>
+        By placing an order, you agree to provide current, complete, and accurate purchase and account information.
+        Payment must be made in full before shipment.
+      </p>
+
+      <h5>4. Shipping and Delivery</h5>
+      <p>
+        We aim to deliver products within the estimated time frame but are not responsible for delays beyond our control.
+      </p>
+
+      <h5>5. Returns and Refunds</h5>
+      <p>
+        Please refer to our Returns Policy for information on returns and refunds.
+      </p>
+
+      <h5>6. Intellectual Property</h5>
+      <p>
+        All content on this site, including text, graphics, logos, and images, is the property of <strong>E-Shop</strong> and protected by copyright laws.
+      </p>
+
+      <h5>7. Limitation of Liability</h5>
+      <p>
+        We are not liable for any damages arising from the use or inability to use our website or products.
+      </p>
+
+      <h5>8. Changes to Terms</h5>
+      <p>
+        We reserve the right to update these terms at any time without prior notice.
+        Your continued use of the site constitutes acceptance of any changes.
+      </p>
+
+      <h5>Contact Us</h5>
+      <p>
+        If you have any questions regarding these terms, please <a href="{% url 'ContactUs' %}">contact us</a>.
+      </p>
+    </div>
+  </div>
+
+  <hr class="my-5">
+</div>
+
+{% endblock %}

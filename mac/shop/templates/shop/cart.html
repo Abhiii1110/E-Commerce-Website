@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Your Cart</h2>
+
+{% if cart_items %}
+<table class="table">
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Total</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in cart_items %}
+    <tr>
+      <td>{{ item.product.product_name }}</td>
+      <td>{{ item.quantity }}</td>
+      <td>&#8377;{{ item.product.price }}</td>
+      <td>&#8377;{{ item.total_price }}</td>
+      <td>
+        <a href="{% url 'increase_quantity' item.product.id %}" class="btn btn-sm btn-success">➕</a>
+        <a href="{% url 'decrease_quantity' item.product.id %}" class="btn btn-sm btn-warning">➖</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<div style="display: flex; justify-content: center; gap: 20px;">
+    <a href="{% url 'Checkout' %}" class="btn btn-success">Place Order</a>
+    <a href="{% url 'index' %}" class="btn btn-secondary">Continue Shopping</a>
+</div>
+
+{% else %}
+<p>Your cart is empty.</p>
+<a href="{% url 'index' %}" class="btn btn-secondary">Continue Shopping</a>
+{% endif %}
+
+{% endblock %}
